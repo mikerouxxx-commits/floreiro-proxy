@@ -1,6 +1,5 @@
 export default async function handler(req, res) {
-  const path = req.url.replace(/^\/api/, '');
-  const targetUrl = 'https://api.floreiro.ru' + path;
+  const targetUrl = 'https://api.floreiro.ru/api' + req.url;
 
   try {
     const response = await fetch(targetUrl, {
