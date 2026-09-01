@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const targetUrl = 'https://api.floreiro.ru/api' + req.url;
+  const targetUrl = 'https://api.floreiro.ru' + req.url;
 
   try {
     const response = await fetch(targetUrl, {
