@@ -1,5 +1,7 @@
 export default async function handler(req, res) {
-  const targetUrl = 'https://api.floreiro.ru' + req.url;
+  const { path } = req.query;
+  const segments = Array.isArray(path) ? path.join('/') : (path || '');
+  const targetUrl = 'https://api.floreiro.ru/api/' + segments;
 
   try {
     const response = await fetch(targetUrl, {
